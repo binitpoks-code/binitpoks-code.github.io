@@ -3,10 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binit's Site</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <title>Binit Pokharel's Personal Homepage | Home</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f4f1e8;
+            color: #25313c;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #294c60;
+            color: #f7f3e8;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h2,
+        h3 {
+            color: #294c60;
+        }
+
+        p {
+            text-align: left;
+        }
+
+        figure {
+            margin: 1.5rem 0;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        figcaption {
+            margin-top: 0.5rem;
+            color: #53636f;
+            font-style: italic;
+        }
+
+        a,
+        a:visited {
+            color: #176b70;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        footer {
+            min-height: 2rem;
+            border-top: 2px solid #8fa6a8;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 1rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Hey, it's Binit, and this is the root of my website!</h1>
-    <a href="/itis3135/">Click here to view my website</a>
+    <header>
+        <h1>Binit Pokharel's Personal Homepage</h1>
+    </header>
+    <main>
+        <h2>Home</h2>
+        <h3>About Me</h3>
+        <p>Hi, I’m Binit Pokharel, a Computer Science major. Outside of school, I enjoy lifting, traveling, and hiking whenever I get the chance. I’m also really into fragrances and enjoy collecting different ones.</p>
+        <figure>
+            <img src="images/hiking-view.jpg" alt="View from one of my hiking trips" width="900" height="1313">
+            <figcaption>A view from one of my hiking trips.</figcaption>
+        </figure>
+        <h3>Course Work</h3>
+        <a href="itis3135/">ITIS3135 - Front-End Web App Development</a>
+    </main>
+    <footer>
+        <em>Learning, exploring, and building along the way.</em>
+    </footer>
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>
