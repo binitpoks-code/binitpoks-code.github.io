@@ -47,6 +47,10 @@ ul {
     text-align: left;
 }
 
+blockquote p {
+    text-align: center;
+}
+
 li {
     margin-bottom: 0.75rem;
 }
@@ -189,6 +193,10 @@ footer {
     max-width: 300px;
     flex-shrink: 0;
     margin: 1rem auto;
+}
+
+.contract-layout figure img {
+    width: 60%;
 }
 
 @media (max-width: 600px) {
