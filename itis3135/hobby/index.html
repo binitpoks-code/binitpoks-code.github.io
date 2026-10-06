@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragrance Collecting ✨ What</title>
+    <style>
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #1a1a1a;
+            color: #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        header,
+        footer {
+            padding: 1.5rem;
+            background-color: #111111;
+            text-align: center;
+        }
+
+        header {
+            border-bottom: 2px solid #3a3a3a;
+        }
+
+        section {
+            background-color: #242424;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: Georgia, "Palatino Linotype", serif;
+            line-height: 1.3;
+            color: #f2f2f2;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+        }
+
+        header p {
+            margin: 0.75rem 0 1rem;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4rem;
+            line-height: 2.5;
+        }
+
+        nav a,
+        nav a:visited {
+            display: inline-block;
+            color: #d6ad60;
+            text-decoration: none;
+            border: 1px solid #6f5a35;
+            border-radius: 999px;
+            padding: 0.45rem 0.85rem;
+            font-weight: 700;
+            background-color: #1f1f1f;
+            line-height: 1.6;
+            white-space: nowrap;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #f0c979;
+            background-color: #2a2a2a;
+            border-color: #d6ad60;
+        }
+
+        nav a[aria-current="page"] {
+            color: #1a1a1a;
+            background-color: #d6ad60;
+            border-color: #f0c979;
+        }
+
+        a,
+        a:visited {
+            color: #d6ad60;
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+        }
+
+        a:hover,
+        a:focus {
+            color: #f0c979;
+        }
+
+        a:focus-visible {
+            outline: 2px solid #f0c979;
+            outline-offset: 4px;
+        }
+
+        a[aria-current="page"] {
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 46rem;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            min-height: 12rem;
+        }
+
+        h2 {
+            margin: 0 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #3a3a3a;
+            font-family: Georgia, "Palatino Linotype", serif;
+            line-height: 1.3;
+            color: #f2f2f2;
+            font-size: 1.6rem;
+        }
+
+        main p,
+        main ul,
+        main ol {
+            text-align: left;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        caption {
+            margin-bottom: 0.5rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        th,
+        td {
+            border: 1px solid #3a3a3a;
+            padding: 0.65rem;
+            text-align: left;
+        }
+
+        thead {
+            background-color: #111111;
+        }
+
+        figure {
+            background-color: #242424;
+            border: 1px solid #3a3a3a;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 1.5rem auto;
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            color: #f2dfb3;
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .image-prompt {
+            display: block;
+            font-weight: 400;
+            line-height: 1.6;
+            text-align: left;
+            color: #b8b8b8;
+            margin: 0.5rem 0 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            border-top: 1px solid #3a3a3a;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 1rem 0 0;
+        }
+
+        footer p a {
+            color: #f0c979;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            display: inline-block;
+            background-color: #d6ad60;
+            color: #1a1a1a;
+            padding: 0.75rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus {
+            background-color: #f0c979;
+            color: #1a1a1a;
+        }
+
+        @media (max-width: 600px) {
+            header,
+            footer {
+                padding: 1.25rem 1rem;
+            }
+
+            main {
+                padding: 1.5rem 1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            nav {
+                line-height: 2.8;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Fragrance Collecting</h1>
+        <p><em>There is always another scent to explore.</em></p>
+        <!-- div just groups the footer links; no spans needed for the sparkle separators -->
+        <nav aria-label="Hobby sections">
+            <a href="#what" aria-current="page">What</a> ✨
+            <a href="#who">Who</a> ✨
+            <a href="#when">When</a> ✨
+            <a href="#where">Where</a> ✨
+            <a href="#how">How</a> ✨
+            <a href="#why">Why</a> ✨
+            <a href="#ai-prompts">AI Prompts</a>
+        </nav>
+    </header>
+    <!-- ids are for the section links and classes handle repeated styling -->
+    <main>
+        <section id="what">
+            <h2>What</h2>
+            <p>Fragrance collecting is about trying different scents and finding ones I enjoy wearing. I like having a few different options instead of wearing the same thing every day.</p>
+            <p>My collection is around 31 bottles now. Fragrances come in lots of scent styles, and I usually prefer woody and fresh ones.</p>
+            <ul>
+                <li>Fresh</li>
+                <li>Woody</li>
+                <li>Citrus</li>
+                <li>Aquatic</li>
+                <li>Spicy</li>
+                <li>Sweet</li>
+            </ul>
+            <figure>
+                <img src="images/fragrance-collection.png" alt="Personal fragrance collection arranged on a wooden dresser" width="1536" height="1024">
+                <figcaption>
+                    A look at some fragrances that represent my collection.
+                    <br>
+                    <em class="image-prompt">Image prompt: Create a realistic personal fragrance collection on a warm home dresser using the bottle styles from my collection.</em>
+                </figcaption>
+            </figure>
+        </section>
+        <section id="who" hidden>
+            <h2>Who</h2>
+            <p>My sister gifted me Dior Sauvage Elixir for my 17th birthday. I was impressed by how good it smelled, and it made me curious about other fragrances.</p>
+            <p>After that, I started watching fragrance reviews and unboxings on YouTube and TikTok. Seeing people talk about different scents got me more interested in collecting.</p>
+            <p>When I was newer to the hobby, I bought into the hype around some sweet fragrances. I still own a few, but they are not really my favorite. That taught me to pay more attention to my own taste.</p>
+            <figure>
+                <img src="images/fragrance-story.png" alt="Stronger With You Intensely, Valentino, and 1 Million Elixir bottles against a black background" width="1536" height="1024">
+                <figcaption>
+                    Different fragrances fit different moods, settings, and purposes.
+                    <br>
+                    <em class="image-prompt">Image prompt: Arrange Stronger With You Intensely, Valentino, and 1 Million Elixir against a black background with dramatic lighting and subtle reflections.</em>
+                </figcaption>
+            </figure>
+        </section>
+        <section id="when" hidden>
+            <h2>When</h2>
+            <p>I match what I wear to the situation. For the gym, I usually prefer fresh scents like Louis Vuitton Pacific Chill or Jean Paul Gaultier Le Beau. At school, I keep it lighter with something like Bleu de Chanel.</p>
+            <p>Parties and special occasions are when I enjoy fragrances most. My choice depends on the weather and the vibe, so I do not have one bottle for every occasion.</p>
+            <table>
+                <caption>What I reach for in different situations</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Situation</th>
+                        <th scope="col">What I Usually Prefer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Gym</th><td>Fresh and clean</td></tr>
+                    <tr><th scope="row">School</th><td>Light and easy to wear</td></tr>
+                    <tr><th scope="row">Parties</th><td>Something stronger, depending on the mood</td></tr>
+                    <tr><th scope="row">Hot weather</th><td>Fresh or aquatic</td></tr>
+                    <tr><th scope="row">Cold weather</th><td>Woody or spicy</td></tr>
+                </tbody>
+            </table>
+            <figure>
+                <img src="images/fragrance-when.png" alt="Angel's Share by Kilian on a wooden side table in warm evening light" width="1536" height="1024">
+                <figcaption>
+                    I enjoy richer scents for evenings, colder weather, and special occasions.
+                    <br>
+                    <em class="image-prompt">Image prompt: Place Angel's Share by Kilian on a wooden side table with warm amber lighting and a cozy evening background.</em>
+                </figcaption>
+            </figure>
+        </section>
+        <section id="where" hidden>
+            <h2>Where</h2>
+            <p>Department stores and places like Sephora give people a chance to explore scents in person. Sample sets are another way to try a few fragrances at home without getting a full bottle.</p>
+            <p>The setting matters when wearing a fragrance, too. A casual outdoor hangout gives a scent more room than a small indoor space. In close spaces or formal settings, keeping it subtle makes sense.</p>
+            <p>A cool, dark spot at home is a good place to keep bottles. Direct sunlight, heat, and a steamy bathroom are things to avoid when choosing a storage spot.</p>
+            <figure>
+                <img src="images/fragrance-where.png" alt="Fragrance bottles and scent strips on a shaded wooden shelf" width="1536" height="1024">
+                <figcaption>
+                    Modern masculine, fresh, sweet, spicy, and woody.
+                    <br>
+                    <em class="image-prompt">Image prompt: Create a personal fragrance storage and testing setup with bottles and scent strips on a shaded shelf.</em>
+                </figcaption>
+            </figure>
+        </section>
+        <section id="how" hidden>
+            <h2>How</h2>
+            <p>To test a fragrance, spray a little on skin and give it time before deciding. The first smell can change as it dries down, so that first spray does not tell the whole story.</p>
+            <p>I usually keep it to about 1 to 3 sprays for school. A small amount on the wrists or neck is a simple starting point, and the number of sprays should depend on how strong the scent is and how close other people will be.</p>
+            <ol>
+                <li><strong>Top Notes:</strong> The first scents you notice right after spraying. They usually fade the fastest.</li>
+                <li><strong>Middle Notes:</strong> The scents that become clearer as the opening fades.</li>
+                <li><strong>Base Notes:</strong> The longer-lasting scents that stay through the dry-down.</li>
+            </ol>
+            <figure>
+                <img src="images/fragrance-how.png" alt="Fragrance bottles, scent strips, citrus peel, and wood beside a notebook" width="1536" height="1024">
+                <figcaption>
+                    Testing a scent helps me notice how it changes.
+                    <br>
+                    <em class="image-prompt">Image prompt: Create a realistic fragrance testing setup with scent strips, a notebook, citrus peel, leaves, and cedar pieces.</em>
+                </figcaption>
+            </figure>
+        </section>
+        <section id="why" hidden>
+            <h2>Why</h2>
+            <p>Smelling good gives me confidence and feels like part of my personal style. Choosing a fragrance is a small thing, but I enjoy that part of getting ready.</p>
+            <p>I also like collecting the bottles and having different scents for different seasons. Scents can bring back memories, which makes the hobby feel more personal than just owning a collection.</p>
+            <p>Yves Saint Laurent and Christian Dior are two of my favorite fragrance houses. Still, I care more about how something smells than the label. I am not collecting just to flex a brand.</p>
+            <figure>
+                <img src="images/fragrance-why.png" alt="Creed Aventus and Parfums de Marly Layton beside a watch and worn notebook on a softly lit wooden dresser" width="1536" height="1024">
+                <figcaption>
+                    Fragrance is part of my style, confidence, and memories.
+                    <br>
+                    <em class="image-prompt">Image prompt: Create a high-quality realistic photograph of Creed Aventus and Parfums de Marly Layton on a clean wooden dresser beside a watch and worn notebook. Use soft window lighting, realistic reflections, and a calm, personal mood that suggests confidence, style, and memories. Keep the composition object-only, with no people, body parts, human reflections, clutter, extra perfume bottles, collage, text overlays, or luxury-ad styling.</em>
+                </figcaption>
+            </figure>
+        </section>
+        <section id="ai-prompts" hidden>
+            <h2>AI Prompts</h2>
+            <p>AI was used as a support tool during this project for planning, writing, and visual ideas. It helped me organize the required sections, create a checklist based on the assignment requirements, and improve some of my writing while keeping my original meaning.</p>
+            <p>I also used AI to compare color ideas before choosing the dark charcoal, gold, and cream theme used throughout the website. For the fragrance images, I provided reference pictures and described the lighting, background, bottle style, and overall look I wanted before choosing the final versions.</p>
+            <ul>
+                <li><strong>Brainstorming:</strong> Helped organize the sections and build a checklist for the assignment.</li>
+                <li><strong>Writing:</strong> Helped fix grammar and make some of my casual writing clearer.</li>
+                <li><strong>Design:</strong> Helped compare color combinations and visual ideas.</li>
+                <li><strong>Images:</strong> Helped develop image prompts from fragrance references and generate the final visual scenes.</li>
+            </ul>
+            <p>For the image workflow, I used generative AI to develop and create the fragrance scenes based on the references and visual direction I provided.</p>
+            <p><em>The specific image prompt used for each picture is shown underneath its figure.</em></p>
+            <figure>
+                <img src="images/ai-prompts-fragrance-flatlay.png" alt="Dark top-down arrangement of fragrance bottles on a textured surface" width="1536" height="1024">
+                <figcaption>
+                    Planning the content, colors, and images for my fragrance website.
+                    <br>
+                    <em class="image-prompt">Image prompt: Create a photorealistic top-down fragrance flat-lay on a dark textured background with several different bottles, soft cinematic lighting, and a clean personal collection aesthetic.</em>
+                </figcaption>
+            </figure>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="https://validator.w3.org/check?uri=referer">Validate HTML</a>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
+            <a href="https://wave.webaim.org/">Accessibility Checker</a>
+        </div>
+        <p>Designed by <a href="../binitpokhareldesigns.com/">Binit Designs</a> ©2026</p>
+    </footer>
+    <script src="scripts/hobby.js"></script>
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>
