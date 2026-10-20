@@ -5,15 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binit Pokharel's Bold Panther | ITIS3135 | Survey</title>
     <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/certification.css">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <script src="scripts/include_components.js" defer></script>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- The loader replaces these placeholders with the shared header and footer elements. -->
     <div data-include="components/header.html"></div>
     <main>
         <h2>Survey</h2>
+        <!-- divs, classes, and ids here are used to organize the fragrance survey and form layout -->
+        <h3 id="title">Fragrance Preferences</h3>
+<p id="description">What do you like to wear? This is a demo survey. Your information is not saved or sent to a service.</p>
+        <figure class="project-figure">
+        <img class="project-image" src="images/fragrance-survey.jpg" alt="Fragrance collection for the preference survey" width="600" height="400">
+        </figure>
+<form class="project-form" id="survey-form" action="#" method="get">
+<label id="name-label" for="name">Name (required)</label>
+        <input class="project-control" id="name" type="text" placeholder="Your name" required>
+<label id="email-label" for="email">Email (required)</label>
+        <input class="project-control" id="email" type="email" placeholder="you@example.com" required>
+<label id="number-label" for="number">Age (optional)</label>
+        <input class="project-control" id="number" type="number" min="13" max="100" placeholder="13 to 100">
+<label for="dropdown">Favorite fragrance type</label>
+        <select class="project-control" id="dropdown">
+        <option>Fresh</option>
+        <option>Woody</option>
+        <option>Sweet</option>
+        <option>Citrus</option>
+        <option>Spicy</option>
+        <option>Aquatic</option>
+        </select>
+<label for="occasion">When do you usually wear fragrance?</label>
+        <select class="project-control" id="occasion">
+        <option>Everyday</option>
+        <option>Special occasions</option>
+        <option>Evenings</option>
+        </select>
+<fieldset class="project-fieldset">
+        <legend>Preferred strength</legend>
+        <label class="project-option">
+        <input type="radio" name="strength" value="light" checked> Light</label>
+        <label class="project-option">
+        <input type="radio" name="strength" value="moderate"> Moderate</label>
+        <label class="project-option">
+        <input type="radio" name="strength" value="strong"> Strong</label>
+        </fieldset>
+<fieldset class="project-fieldset">
+        <legend>Preferences (choose any)</legend>
+        <label class="project-option">
+        <input type="checkbox" name="preferences" value="samples"> Try samples first</label>
+        <label class="project-option">
+        <input type="checkbox" name="preferences" value="travel"> Travel-size bottles</label>
+        </fieldset>
+<label for="comments">Additional comments</label>
+        <textarea class="project-control" id="comments" rows="4"></textarea>
+        <button class="project-button" id="submit" type="submit">Submit demo survey</button>
+        </form>
     </main>
     <div data-include="components/footer.html"></div>
     <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>

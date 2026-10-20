@@ -5,15 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binit Pokharel's Bold Panther | ITIS3135 | Inventory</title>
     <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/certification.css">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <script src="scripts/include_components.js" defer></script>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- The loader replaces these placeholders with the shared header and footer elements. -->
     <div data-include="components/header.html"></div>
     <main>
         <h2>Inventory</h2>
+        <!-- divs, spans, classes, and ids here are used to organize and style the fragrance inventory content -->
+        <p>A sample fragrance-store inventory. Prices and stock are made-up class examples.</p>
+        <figure class="project-figure">
+        <img class="project-image" src="images/fragrance-inventory.jpg" alt="Fragrance bottles displayed as a store collection" width="600" height="400">
+        </figure>
+        <div class="table-scroll" role="region" aria-label="Fragrance inventory" tabindex="0">
+        <table class="inventory-table">
+        <caption>Sample fragrance inventory, prices in US dollars</caption>
+        <thead>
+        <tr>
+        <th scope="col">Fragrance</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Type</th>
+        <th scope="col">Price</th>
+        <th scope="col">Stock Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <th scope="row">Sauvage Elixir</th>
+        <td>Dior</td>
+        <td>Spicy</td>
+        <td>$180</td>
+        <td>In Stock</td>
+        </tr>
+        <tr>
+        <th scope="row">Bleu de Chanel</th>
+        <td>Chanel</td>
+        <td>Woody</td>
+        <td>$150</td>
+        <td>Low Stock</td>
+        </tr>
+        <tr>
+        <th scope="row">Stronger With You Intensely</th>
+        <td>Emporio Armani</td>
+        <td>Sweet</td>
+        <td>$120</td>
+        <td>In Stock</td>
+        </tr>
+        <tr>
+        <th scope="row">Aventus</th>
+        <td>Creed</td>
+        <td>Fresh</td>
+        <td>$350</td>
+        <td>Restocking</td>
+        </tr>
+        <tr>
+        <th scope="row">Layton</th>
+        <td>Parfums de Marly</td>
+        <td>Spicy</td>
+        <td>$250</td>
+        <td>Low Stock</td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
     </main>
     <div data-include="components/footer.html"></div>
     <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
