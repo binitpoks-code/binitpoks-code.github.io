@@ -1,0 +1,39 @@
+/* Photograph sections and articles separate the six demonstrations using site colors.
+   picture-heading shares heading typography; the two title classes set size and spacing. */
+.picture-section { margin: 2rem auto; max-width: 960px; }
+.picture-heading { color: #56325f; font-family: "Trebuchet MS", Arial, sans-serif; line-height: 1.35; }
+.picture-section-title { font-size: 1.35rem; }
+.picture-article-title { font-size: 1.1rem; margin: 0 0 1rem; }
+.picture-section article { background: #f8f5f9; border: 1px solid #c8b9cd; border-radius: 8px; padding: clamp(1rem, 3vw, 1.75rem); margin: 1.5rem 0; }
+.picture-section p { max-width: 75ch; }
+.picture-section figure { min-width: 0; max-width: 100%; }
+.picture-section img { max-width: 100%; height: auto; }
+.picture-section figcaption { font-size: 0.9rem; overflow-wrap: anywhere; }
+hr { border: 0; border-top: 2px solid #76547c; margin: 3rem 0; }
+/* Conversion links wrap naturally and remain easy to reach by keyboard. */
+.picture-links { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; padding-left: 1.25rem; }
+/* Gallery divs group parallel figures without introducing extra document sections. */
+.picture-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; align-items: start; }
+.picture-gallery figure { margin: 0; }
+/* Both sources use identical display dimensions to expose lost resolution. */
+.picture-enlargement img { width: 300px; }
+.picture-sphere .picture-enlargement img { aspect-ratio: 600 / 900; }
+.picture-lid .picture-enlargement img { aspect-ratio: 400 / 506; }
+/* Distortion classes retain a fixed reference width or height; fill deliberately stretches.
+   The 180px baseline fits the mobile card as well as the desktop comparison grid. */
+.picture-distortions { --normal-height: 270px; }
+.picture-lid .picture-distortions { --normal-height: 227.7px; }
+.picture-distortions img { width: 180px; height: var(--normal-height); object-fit: fill; }
+.picture-distortions .squash-33 { height: calc(var(--normal-height) * 0.67); }
+.picture-distortions .squash-55 { height: calc(var(--normal-height) * 0.45); }
+.picture-distortions .narrow-33 { width: 120.6px; }
+.picture-distortions .narrow-55 { width: 81px; }
+/* Compact measurement tables wrap inside narrow cards without a scrolling page. */
+.picture-section table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 0.85rem; }
+.picture-section caption { text-align: left; font-weight: bold; margin-bottom: 0.75rem; }
+.picture-section th, .picture-section td { padding: 0.6rem 0.35rem; border-bottom: 1px solid #c8b9cd; text-align: left; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+    .picture-gallery { grid-template-columns: minmax(0, 1fr); }
+    .picture-section article { padding: 1rem; }
+    .picture-section table { font-size: 0.75rem; }
+}
