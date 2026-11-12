@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Binit Pokharel's Bold Panther | ITIS3135 | Introduction Form</title>
+        <link rel="stylesheet" href="styles/default.css">
+        <link rel="stylesheet" href="styles/introduction_form.css">
+        <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+        <script src="scripts/include_components.js" defer></script>
+        <script src="scripts/introduction.js" defer></script>
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- This div loads the shared header through data-include. -->
+        <div data-include="components/header.html"></div>
+        <main>
+            <h2>Introduction Form</h2>
+            <!-- Interface ids switch between editing and results; control ids connect buttons and status output to event handlers. -->
+            <section id="form-interface">
+                <h3>Please Submit Your Introduction</h3>
+                <p>Edit your information and submit the form. The personal statement is optional.</p>
+                <form id="introduction-form">
+                    <!-- The form-fields id identifies editable fields for Clear and Reset. Divs group label/input pairs; form-layout and full-width classes arrange responsive fields. -->
+                    <!-- The picture-layout and picture-fields classes align upload controls beside the preview; picture-preview identifies the image updated by JavaScript. -->
+                    <!-- The courses id groups removable courses, and add-course identifies the control that adds fields. -->
+                    <div id="form-fields">
+                        <fieldset>
+                            <legend>Personal Information</legend>
+                            <div class="form-layout">
+                                <div>
+                                    <label for="firstName">First Name</label>
+                                    <input
+                                        type="text"
+                                        id="firstName"
+                                        name="firstName"
+                                        required
+                                        placeholder="Enter first name"
+                                        value="Binit">
+                                </div>
+                                <div>
+                                    <label for="lastName">Last Name</label>
+                                    <input
+                                        type="text"
+                                        id="lastName"
+                                        name="lastName"
+                                        required
+                                        placeholder="Enter last name"
+                                        value="Pokharel">
+                                </div>
+                                <div>
+                                    <label for="middleName">Middle Name/Initial (Optional)</label>
+                                    <input
+                                        type="text"
+                                        id="middleName"
+                                        name="middleName"
+                                        placeholder="Enter middle name/initial"
+                                        value="">
+                                </div>
+                                <div>
+                                    <label for="nickname">Nickname/Preferred Name (Optional)</label>
+                                    <input
+                                        type="text"
+                                        id="nickname"
+                                        name="nickname"
+                                        placeholder="Enter nickname/preferred name"
+                                        value="B">
+                                </div>
+                                <div class="full-width">
+                                    <label for="acknowledgment">Acknowledgment Statement</label>
+                                    <textarea
+                                        id="acknowledgment"
+                                        name="acknowledgment"
+                                        required
+                                        placeholder="Enter acknowledgment statement"
+                                        rows="2"
+                                    >
+I, Binit Pokharel, agree to follow the expectations and responsibilities of the course contract for Fall 2026 ITIS 3135, Front-End Web App Development, with my instructor, Professor D.I. von Briesen.</textarea>
+                                </div>
+                                <div>
+                                    <label for="acknowledgmentDate">Acknowledgment Date</label>
+                                    <input
+                                        type="text"
+                                        id="acknowledgmentDate"
+                                        name="acknowledgmentDate"
+                                        required
+                                        placeholder="MM/DD/YYYY"
+                                        pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"
+                                        title="Enter a valid date in MM/DD/YYYY format."
+                                        value="09/10/2026">
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Mascot and Site Details</legend>
+                            <div class="form-layout">
+                                <div>
+                                    <label for="adjectives">Mascot Adjective</label>
+                                    <input
+                                        type="text"
+                                        id="adjectives"
+                                        name="adjectives"
+                                        required
+                                        placeholder="Enter mascot adjective"
+                                        value="Bold">
+                                </div>
+                                <div>
+                                    <label for="animal">Mascot Animal</label>
+                                    <input
+                                        type="text"
+                                        id="animal"
+                                        name="animal"
+                                        required
+                                        placeholder="Enter mascot animal"
+                                        value="Panther">
+                                </div>
+                                <div>
+                                    <label for="prettyNameDivider">Name Divider</label>
+                                    <input
+                                        type="text"
+                                        id="prettyNameDivider"
+                                        name="prettyNameDivider"
+                                        required
+                                        placeholder="Enter name divider"
+                                        value="|">
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Picture and Caption</legend>
+                            <div class="picture-layout">
+                                <div class="picture-fields">
+                                    <div>
+                                        <label for="picture">Picture (Optional)</label>
+                                        <input
+                                            type="file"
+                                            id="picture"
+                                            name="picture"
+                                            accept="image/*">
+                                    </div>
+                                    <div>
+                                        <label for="pictureAlt">Picture Alt Text</label>
+                                        <input
+                                            type="text"
+                                            id="pictureAlt"
+                                            name="pictureAlt"
+                                            required
+                                            placeholder="Enter picture alt text"
+                                            value="Binit Pokharel">
+                                    </div>
+                                    <div>
+                                        <label for="caption">Picture Caption</label>
+                                        <input
+                                            type="text"
+                                            id="caption"
+                                            name="caption"
+                                            required
+                                            placeholder="Enter picture caption"
+                                            value="Binit Pokharel">
+                                    </div>
+                                </div>
+                                <figure>
+                                    <img id="picture-preview" src="images/binit.jpg" alt="Binit Pokharel">
+                                </figure>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Personal and Academic Background</legend>
+                            <div class="form-layout">
+                                <div>
+                                    <label for="personalInfo">Personal Statement (Optional)</label>
+                                    <textarea
+                                        id="personalInfo"
+                                        name="personalInfo"
+                                        placeholder="Enter personal statement"
+                                        rows="2"
+                                    ></textarea>
+                                </div>
+                                <div>
+                                    <label for="background-0">Personal Background</label>
+                                    <textarea
+                                        id="background-0"
+                                        name="background-0"
+                                        required
+                                        placeholder="Enter personal background"
+                                        rows="2"
+                                    >
+Grew up in Nepal and currently lives in Charlotte, North Carolina.</textarea>
+                                </div>
+                                <div>
+                                    <label for="background-1">Professional Background</label>
+                                    <textarea
+                                        id="background-1"
+                                        name="background-1"
+                                        required
+                                        placeholder="Enter professional background"
+                                        rows="2"
+                                    >
+Full-time student who also works on software development projects.</textarea>
+                                </div>
+                                <div>
+                                    <label for="background-2">Academic Background</label>
+                                    <textarea
+                                        id="background-2"
+                                        name="background-2"
+                                        required
+                                        placeholder="Enter academic background"
+                                        rows="2"
+                                    >
+B.S. in Computer Science, expected Class of 2027. Expected graduation: 2027.</textarea>
+                                </div>
+                                <div>
+                                    <label for="background-3">Current Status</label>
+                                    <textarea
+                                        id="background-3"
+                                        name="background-3"
+                                        required
+                                        placeholder="Enter current status"
+                                        rows="2"
+                                    >
+I am a full-time student.</textarea>
+                                </div>
+                                <div>
+                                    <label for="background-4">Background in this Subject</label>
+                                    <textarea
+                                        id="background-4"
+                                        name="background-4"
+                                        required
+                                        placeholder="Enter background in this subject"
+                                        rows="2"
+                                    >
+I am learning front-end web development through ITIS 3135.</textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Work Environment</legend>
+                            <div class="form-layout">
+                                <div>
+                                    <label for="background-5">Primary Work Computer</label>
+                                    <input
+                                        type="text"
+                                        id="background-5"
+                                        name="background-5"
+                                        required
+                                        placeholder="Enter primary work computer"
+                                        value="ASUS Zenbook 14 OLED, Intel Core Ultra 7 155H, 32 GB RAM.">
+                                </div>
+                                <div>
+                                    <label for="background-6">Primary Work Location</label>
+                                    <input
+                                        type="text"
+                                        id="background-6"
+                                        name="background-6"
+                                        required
+                                        placeholder="Enter primary work location"
+                                        value="UNC Charlotte">
+                                </div>
+                                <div>
+                                    <label for="background-7">Alternate Computer</label>
+                                    <input
+                                        type="text"
+                                        id="background-7"
+                                        name="background-7"
+                                        required
+                                        placeholder="Enter alternate computer"
+                                        value="None">
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Courses</legend>
+                            <div id="courses">
+                                <fieldset data-course>
+                                    <legend>Course 1</legend>
+                                    <div class="form-layout">
+                                        <div>
+                                            <label for="course-1-department">Department</label>
+                                            <input
+                                                type="text"
+                                                id="course-1-department"
+                                                name="course-1-department"
+                                                required
+                                                placeholder="Enter department"
+                                                data-key="department"
+                                                value="ITIS">
+                                        </div>
+                                        <div>
+                                            <label for="course-1-number">Number</label>
+                                            <input
+                                                type="text"
+                                                id="course-1-number"
+                                                name="course-1-number"
+                                                required
+                                                placeholder="Enter number"
+                                                data-key="number"
+                                                value="3135">
+                                        </div>
+                                        <div>
+                                            <label for="course-1-name">Course Name</label>
+                                            <input
+                                                type="text"
+                                                id="course-1-name"
+                                                name="course-1-name"
+                                                required
+                                                placeholder="Enter course name"
+                                                data-key="name"
+                                                value="Front-End Web App Development">
+                                        </div>
+                                        <div class="full-width">
+                                            <label for="course-1-reason">Reason</label>
+                                            <textarea
+                                                id="course-1-reason"
+                                                name="course-1-reason"
+                                                required
+                                                placeholder="Enter reason"
+                                                data-key="reason"
+                                                rows="2"
+                                            >
+I’ve worked on a few web projects on my own while learning web development, so I was already interested in taking this course. I also chose Professor von Briesen’s class because I’ve known him since my first year of college at CPCC.</textarea>
+                                        </div>
+                                    </div>
+                                    <button type="button" data-remove-course>Remove Course</button>
+                                </fieldset>
+                                <fieldset data-course>
+                                    <legend>Course 2</legend>
+                                    <div class="form-layout">
+                                        <div>
+                                            <label for="course-2-department">Department</label>
+                                            <input
+                                                type="text"
+                                                id="course-2-department"
+                                                name="course-2-department"
+                                                required
+                                                placeholder="Enter department"
+                                                data-key="department"
+                                                value="ITIS">
+                                        </div>
+                                        <div>
+                                            <label for="course-2-number">Number</label>
+                                            <input
+                                                type="text"
+                                                id="course-2-number"
+                                                name="course-2-number"
+                                                required
+                                                placeholder="Enter number"
+                                                data-key="number"
+                                                value="3200">
+                                        </div>
+                                        <div>
+                                            <label for="course-2-name">Course Name</label>
+                                            <input
+                                                type="text"
+                                                id="course-2-name"
+                                                name="course-2-name"
+                                                required
+                                                placeholder="Enter course name"
+                                                data-key="name"
+                                                value="Intro to Info Security &amp; Privacy">
+                                        </div>
+                                        <div class="full-width">
+                                            <label for="course-2-reason">Reason</label>
+                                            <textarea
+                                                id="course-2-reason"
+                                                name="course-2-reason"
+                                                required
+                                                placeholder="Enter reason"
+                                                data-key="reason"
+                                                rows="2"
+                                            >
+I’m interested in learning more about security and privacy, especially when it comes to building software. I want to better understand what information should be private or public and how to keep users and their data safe.</textarea>
+                                        </div>
+                                    </div>
+                                    <button type="button" data-remove-course>Remove Course</button>
+                                </fieldset>
+                                <fieldset data-course>
+                                    <legend>Course 3</legend>
+                                    <div class="form-layout">
+                                        <div>
+                                            <label for="course-3-department">Department</label>
+                                            <input
+                                                type="text"
+                                                id="course-3-department"
+                                                name="course-3-department"
+                                                required
+                                                placeholder="Enter department"
+                                                data-key="department"
+                                                value="ITSC">
+                                        </div>
+                                        <div>
+                                            <label for="course-3-number">Number</label>
+                                            <input
+                                                type="text"
+                                                id="course-3-number"
+                                                name="course-3-number"
+                                                required
+                                                placeholder="Enter number"
+                                                data-key="number"
+                                                value="3155">
+                                        </div>
+                                        <div>
+                                            <label for="course-3-name">Course Name</label>
+                                            <input
+                                                type="text"
+                                                id="course-3-name"
+                                                name="course-3-name"
+                                                required
+                                                placeholder="Enter course name"
+                                                data-key="name"
+                                                value="Software Engineering">
+                                        </div>
+                                        <div class="full-width">
+                                            <label for="course-3-reason">Reason</label>
+                                            <textarea
+                                                id="course-3-reason"
+                                                name="course-3-reason"
+                                                required
+                                                placeholder="Enter reason"
+                                                data-key="reason"
+                                                rows="2"
+                                            >
+I wanted to learn more about software architecture, the development lifecycle, and how software is built as a team. I also heard this course offers some really interesting group projects and certificates, which made me excited to take it.</textarea>
+                                        </div>
+                                    </div>
+                                    <button type="button" data-remove-course>Remove Course</button>
+                                </fieldset>
+                                <fieldset data-course>
+                                    <legend>Course 4</legend>
+                                    <div class="form-layout">
+                                        <div>
+                                            <label for="course-4-department">Department</label>
+                                            <input
+                                                type="text"
+                                                id="course-4-department"
+                                                name="course-4-department"
+                                                required
+                                                placeholder="Enter department"
+                                                data-key="department"
+                                                value="STAT">
+                                        </div>
+                                        <div>
+                                            <label for="course-4-number">Number</label>
+                                            <input
+                                                type="text"
+                                                id="course-4-number"
+                                                name="course-4-number"
+                                                required
+                                                placeholder="Enter number"
+                                                data-key="number"
+                                                value="2223">
+                                        </div>
+                                        <div>
+                                            <label for="course-4-name">Course Name</label>
+                                            <input
+                                                type="text"
+                                                id="course-4-name"
+                                                name="course-4-name"
+                                                required
+                                                placeholder="Enter course name"
+                                                data-key="name"
+                                                value="Elements of Statistics II">
+                                        </div>
+                                        <div class="full-width">
+                                            <label for="course-4-reason">Reason</label>
+                                            <textarea
+                                                id="course-4-reason"
+                                                name="course-4-reason"
+                                                required
+                                                placeholder="Enter reason"
+                                                data-key="reason"
+                                                rows="2"
+                                            >
+I’ve always enjoyed math. I already completed Calculus I and II even though they weren’t required for my major, and I also took Statistics I. Now I’m taking Statistics II to fulfill a general education requirement while continuing with a subject I enjoy.</textarea>
+                                        </div>
+                                    </div>
+                                    <button type="button" data-remove-course>Remove Course</button>
+                                </fieldset>
+                            </div>
+                            <button type="button" id="add-course">Add Course</button>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Quote and Additional Information</legend>
+                            <div class="form-layout">
+                                <div>
+                                    <label for="quote">Quote</label>
+                                    <input
+                                        type="text"
+                                        id="quote"
+                                        name="quote"
+                                        required
+                                        placeholder="Enter quote"
+                                        value="Talent without working hard is nothing.">
+                                </div>
+                                <div>
+                                    <label for="quoteAuthor">Quote Author</label>
+                                    <input
+                                        type="text"
+                                        id="quoteAuthor"
+                                        name="quoteAuthor"
+                                        required
+                                        placeholder="Enter quote author"
+                                        value="Cristiano Ronaldo">
+                                </div>
+                                <div>
+                                    <label for="funnyItem">Funny Thing (Optional)</label>
+                                    <textarea
+                                        id="funnyItem"
+                                        name="funnyItem"
+                                        placeholder="Enter funny thing"
+                                        rows="2"
+                                    >
+Interestingly, I have two German Shepherds named Leo and Soffee.</textarea>
+                                </div>
+                                <div>
+                                    <label for="somethingToShare"
+                                        >Something I Would Like to Share (Optional)</label
+                                    >
+                                    <textarea
+                                        id="somethingToShare"
+                                        name="somethingToShare"
+                                        placeholder="Enter something i would like to share"
+                                        rows="2"
+                                    >
+I enjoy lifting, traveling, and hiking.</textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Profile Links</legend>
+                            <div class="form-layout">
+                                <div>
+                                    <label for="link-name-0">Link Name</label>
+                                    <input
+                                        type="text"
+                                        id="link-name-0"
+                                        name="link-name-0"
+                                        required
+                                        placeholder="Enter link name"
+                                        value="CLT Web">
+                                </div>
+                                <div>
+                                    <label for="link-href-0">CLT Web URL</label>
+                                    <input
+                                        type="url"
+                                        id="link-href-0"
+                                        name="link-href-0"
+                                        required
+                                        placeholder="Enter clt web url"
+                                        value="https://webpages.charlotte.edu/bpokhar3/">
+                                </div>
+                                <div>
+                                    <label for="link-name-1">Link Name</label>
+                                    <input
+                                        type="text"
+                                        id="link-name-1"
+                                        name="link-name-1"
+                                        required
+                                        placeholder="Enter link name"
+                                        value="GitHub.io">
+                                </div>
+                                <div>
+                                    <label for="link-href-1">GitHub.io URL</label>
+                                    <input
+                                        type="url"
+                                        id="link-href-1"
+                                        name="link-href-1"
+                                        required
+                                        placeholder="Enter github.io url"
+                                        value="https://binitpoks-code.github.io/">
+                                </div>
+                                <div>
+                                    <label for="link-name-2">Link Name</label>
+                                    <input
+                                        type="text"
+                                        id="link-name-2"
+                                        name="link-name-2"
+                                        required
+                                        placeholder="Enter link name"
+                                        value="GitHub">
+                                </div>
+                                <div>
+                                    <label for="link-href-2">GitHub URL</label>
+                                    <input
+                                        type="url"
+                                        id="link-href-2"
+                                        name="link-href-2"
+                                        required
+                                        placeholder="Enter github url"
+                                        value="https://github.com/binitpoks-code">
+                                </div>
+                                <div>
+                                    <label for="link-name-3">Link Name</label>
+                                    <input
+                                        type="text"
+                                        id="link-name-3"
+                                        name="link-name-3"
+                                        required
+                                        placeholder="Enter link name"
+                                        value="freeCodeCamp">
+                                </div>
+                                <div>
+                                    <label for="link-href-3">freeCodeCamp URL</label>
+                                    <input
+                                        type="url"
+                                        id="link-href-3"
+                                        name="link-href-3"
+                                        required
+                                        placeholder="Enter freecodecamp url"
+                                        value="https://www.freecodecamp.org/binitpoks-code">
+                                </div>
+                                <div>
+                                    <label for="link-name-4">Link Name</label>
+                                    <input
+                                        type="text"
+                                        id="link-name-4"
+                                        name="link-name-4"
+                                        required
+                                        placeholder="Enter link name"
+                                        value="Codecademy">
+                                </div>
+                                <div>
+                                    <label for="link-href-4">Codecademy URL</label>
+                                    <input
+                                        type="url"
+                                        id="link-href-4"
+                                        name="link-href-4"
+                                        required
+                                        placeholder="Enter codecademy url"
+                                        value="https://www.codecademy.com/profiles/BinitPokharel">
+                                </div>
+                                <div>
+                                    <label for="link-name-5">Link Name</label>
+                                    <input
+                                        type="text"
+                                        id="link-name-5"
+                                        name="link-name-5"
+                                        required
+                                        placeholder="Enter link name"
+                                        value="LinkedIn">
+                                </div>
+                                <div>
+                                    <label for="link-href-5">LinkedIn URL</label>
+                                    <input
+                                        type="url"
+                                        id="link-href-5"
+                                        name="link-href-5"
+                                        required
+                                        placeholder="Enter linkedin url"
+                                        value="https://www.linkedin.com/in/binit-pokharel-b342a7251">
+                                </div>
+                                <div>
+                                    <label for="link-name-6">Link Name</label>
+                                    <input
+                                        type="text"
+                                        id="link-name-6"
+                                        name="link-name-6"
+                                        required
+                                        placeholder="Enter link name"
+                                        value="ITIS3135.io">
+                                </div>
+                                <div>
+                                    <label for="link-href-6">ITIS3135.io URL</label>
+                                    <input
+                                        type="url"
+                                        id="link-href-6"
+                                        name="link-href-6"
+                                        required
+                                        placeholder="Enter itis3135.io url"
+                                        value="https://binitpoks-code.github.io/itis3135/">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <fieldset>
+                        <legend>Form Controls</legend>
+                        <!-- The form-actions class keeps related buttons together and wraps them on small screens. -->
+                        <div class="form-actions">
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                            <button type="button" id="clear-form">Clear</button>
+                        </div>
+                        <p>Reset restores the original information. Clear empties the editable fields.</p>
+                        <div class="form-actions">
+                            <button type="button" data-format="html">Generate HTML</button>
+                            <button type="button" data-format="json">Generate JSON</button>
+                            <button type="button" data-format="xml">Generate XML</button>
+                        </div>
+                        <label for="generated-output">Generated Output</label>
+                        <textarea
+                            id="generated-output"
+                            rows="8"
+                            readonly
+                            placeholder="Generated HTML, JSON, or XML appears here."
+                        ></textarea>
+                        <p id="output-status" role="status"></p>
+                    </fieldset>
+                </form>
+            </section>
+            <section id="result-interface" hidden aria-label="Generated introduction">
+                <!-- This div receives the introduction markup; its id identifies the result destination. -->
+                <div id="introduction-result"></div>
+                <button type="button" id="return-form">Return to Form</button>
+                <p>
+                    Return to edit your current values, or use Reset in the form to restore the original
+                    information.
+                </p>
+            </section>
+            <!-- The template id provides source content without displaying a second introduction. -->
+            <template id="original-introduction">
+                <h6>Binit 'B' Pokharel | Bold Panther</h6>
+                <figure>
+                    <img src="images/binit.jpg" alt="Binit Pokharel">
+                    <figcaption>Binit Pokharel</figcaption>
+                </figure>
+                <ul>
+                    <li>
+                        <strong>Personal Background:</strong> Grew up in Nepal and currently lives in
+                        Charlotte, North Carolina.
+                    </li>
+                    <li>
+                        <strong>Professional Background:</strong> Full-time student who also works on software
+                        development projects.
+                    </li>
+                    <li>
+                        <strong>Academic Background:</strong> B.S. in Computer Science, expected Class of
+                        2027. Expected graduation: 2027.
+                    </li>
+                    <li><strong>Current Status:</strong> I am a full-time student.</li>
+                    <li>
+                        <strong>Background in this Subject:</strong> I am learning front-end web development
+                        through ITIS 3135.
+                    </li>
+                    <li>
+                        <strong>Primary Work Computer:</strong> ASUS Zenbook 14 OLED, Intel Core Ultra 7 155H,
+                        32 GB RAM.
+                    </li>
+                    <li><strong>Primary Work Location:</strong> UNC Charlotte</li>
+                    <li><strong>Alternate Computer:</strong> None</li>
+                    <li>
+                        <strong>Courses I'm Taking &amp; Why:</strong>
+                        <ol>
+                            <li>
+                                <strong>ITIS 3135 – Front-End Web App Development:</strong> I’ve worked on a
+                                few web projects on my own while learning web development, so I was already
+                                interested in taking this course. I also chose Professor von Briesen’s class
+                                because I’ve known him since my first year of college at CPCC.
+                            </li>
+                            <li>
+                                <strong>ITIS 3200 – Intro to Info Security &amp; Privacy:</strong> I’m
+                                interested in learning more about security and privacy, especially when it
+                                comes to building software. I want to better understand what information
+                                should be private or public and how to keep users and their data safe.
+                            </li>
+                            <li>
+                                <strong>ITSC 3155 – Software Engineering:</strong> I wanted to learn more
+                                about software architecture, the development lifecycle, and how software is
+                                built as a team. I also heard this course offers some really interesting group
+                                projects and certificates, which made me excited to take it.
+                            </li>
+                            <li>
+                                <strong>STAT 2223 – Elements of Statistics II:</strong> I’ve always enjoyed
+                                math. I already completed Calculus I and II even though they weren’t required
+                                for my major, and I also took Statistics I. Now I’m taking Statistics II to
+                                fulfill a general education requirement while continuing with a subject I
+                                enjoy.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>Funny/Interesting Item to Remember Me By:</strong> Interestingly, I have two
+                        German Shepherds named Leo and Soffee.
+                    </li>
+                    <li><strong>I'd Also Like to Share:</strong> I enjoy lifting, traveling, and hiking.</li>
+                </ul>
+                <blockquote>
+                    <p>Talent without working hard is nothing.</p>
+                    <p>- Cristiano Ronaldo</p>
+                </blockquote>
+            </template>
+        </main>
+        <!-- This div loads the shared footer through data-include. -->
+        <div data-include="components/footer.html"></div>
+        <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+    </body>
+</html>

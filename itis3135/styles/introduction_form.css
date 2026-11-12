@@ -1,0 +1,117 @@
+#introduction-form {
+    max-width: 960px;
+    margin: 0 auto;
+}
+#introduction-form fieldset {
+    min-width: 0;
+    margin: 1rem 0;
+    padding: 0.85rem 1rem;
+    border: 1px solid #b09ab7;
+}
+#introduction-form legend {
+    color: #56325f;
+    font-weight: bold;
+    padding: 0 0.4rem;
+}
+#introduction-form .form-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem 1.1rem;
+    align-items: flex-start;
+}
+#introduction-form label {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+}
+#introduction-form input,
+#introduction-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 0.45rem 0.6rem;
+    border: 1px solid #8b7593;
+    border-radius: 3px;
+    background: #faf7fb;
+    color: #352d3b;
+    font: inherit;
+    line-height: 1.45;
+}
+#introduction-form textarea {
+    resize: vertical;
+}
+#introduction-form .form-layout > div {
+    flex: 0 1 calc(50% - 0.55rem);
+    min-width: 0;
+}
+#introduction-form .form-layout > .full-width {
+    flex-basis: 100%;
+}
+#introduction-form .form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.75rem 0;
+}
+#introduction-form .picture-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    align-items: stretch;
+}
+#introduction-form .picture-fields {
+    min-width: 0;
+}
+#introduction-form .picture-fields > div + div {
+    margin-top: 0.7rem;
+}
+#introduction-form .picture-layout figure {
+    order: -1;
+    align-self: center;
+    width: 170px;
+    max-width: 100%;
+    margin: 0;
+}
+#introduction-form #picture-preview {
+    width: 100%;
+    max-width: 170px;
+    height: auto;
+}
+#introduction-form button,
+#result-interface button {
+    padding: 0.5rem 0.85rem;
+    border: 1px solid #56325f;
+    border-radius: 3px;
+    background: #56325f;
+    color: #faf7fb;
+    font: inherit;
+    cursor: pointer;
+}
+#introduction-form button:hover,
+#result-interface button:hover {
+    background: #3f2146;
+}
+#introduction-form input:focus-visible,
+#introduction-form textarea:focus-visible,
+#introduction-form button:focus-visible,
+#result-interface button:focus-visible {
+    outline: 3px solid #76547c;
+    outline-offset: 3px;
+}
+#introduction-form #generated-output {
+    font-family: Consolas, monospace;
+}
+#introduction-form [data-course] {
+    margin: 0.5rem 0 0.85rem;
+}
+#introduction-form [data-course] button {
+    margin-top: 0.6rem;
+}
+@media (max-width: 650px) {
+    #introduction-form .form-layout > div {
+        flex-basis: 100%;
+    }
+    #introduction-form fieldset {
+        padding: 0.75rem;
+    }
+}
