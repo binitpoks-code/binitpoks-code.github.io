@@ -1,0 +1,117 @@
+{
+    "firstName": "Binit",
+    "middleName": "",
+    "nickname": "B",
+    "lastName": "Pokharel",
+    "acknowledgment": "I, Binit Pokharel, agree to follow the expectations and responsibilities of the course contract for Fall 2026 ITIS 3135, Front-End Web App Development, with my instructor, Professor D.I. von Briesen.",
+    "acknowledgmentDate": "2026-09-10",
+    "prettyNameDivider": "|",
+    "adjectives": "Bold",
+    "animal": "Panther",
+    "pictureAlt": "Binit Pokharel",
+    "caption": "Binit Pokharel",
+    "personalInfo": {
+        "statement": "",
+        "personalBackground": "Grew up in Nepal and currently lives in Charlotte, North Carolina.",
+        "professionalBackground": "Full-time student who also works on software development projects.",
+        "academicBackground": "B.S. in Computer Science, expected Class of 2027. Expected graduation: 2027.",
+        "primaryWorkComputer": "ASUS Zenbook 14 OLED, Intel Core Ultra 7 155H, 32 GB RAM.",
+        "primaryWorkLocation": "UNC Charlotte",
+        "alternateComputerLocation": "None"
+    },
+    "quote": "Talent without working hard is nothing.",
+    "quoteAuthor": "Cristiano Ronaldo",
+    "funnyItem": "Interestingly, I have two German Shepherds named Leo and Soffee.",
+    "somethingToShare": "I enjoy lifting, traveling, and hiking.",
+    "img": "images/binit.jpg",
+    "backgrounds": [
+        {
+            "label": "Personal Background",
+            "value": "Grew up in Nepal and currently lives in Charlotte, North Carolina."
+        },
+        {
+            "label": "Professional Background",
+            "value": "Full-time student who also works on software development projects."
+        },
+        {
+            "label": "Academic Background",
+            "value": "B.S. in Computer Science, expected Class of 2027. Expected graduation: 2027."
+        },
+        {
+            "label": "Current Status",
+            "value": "I am a full-time student."
+        },
+        {
+            "label": "Background in this Subject",
+            "value": "I am learning front-end web development through ITIS 3135."
+        },
+        {
+            "label": "Primary Work Computer",
+            "value": "ASUS Zenbook 14 OLED, Intel Core Ultra 7 155H, 32 GB RAM."
+        },
+        {
+            "label": "Primary Work Location",
+            "value": "UNC Charlotte"
+        },
+        {
+            "label": "Alternate Computer",
+            "value": "None"
+        }
+    ],
+    "courses": [
+        {
+            "department": "ITIS",
+            "courseNumber": "3135",
+            "courseTitle": "Front-End Web App Development",
+            "reasonForTaking": "I’ve worked on a few web projects on my own while learning web development, so I was already interested in taking this course. I also chose Professor von Briesen’s class because I’ve known him since my first year of college at CPCC."
+        },
+        {
+            "department": "ITIS",
+            "courseNumber": "3200",
+            "courseTitle": "Intro to Info Security & Privacy",
+            "reasonForTaking": "I’m interested in learning more about security and privacy, especially when it comes to building software. I want to better understand what information should be private or public and how to keep users and their data safe."
+        },
+        {
+            "department": "ITSC",
+            "courseNumber": "3155",
+            "courseTitle": "Software Engineering",
+            "reasonForTaking": "I wanted to learn more about software architecture, the development lifecycle, and how software is built as a team. I also heard this course offers some really interesting group projects and certificates, which made me excited to take it."
+        },
+        {
+            "department": "STAT",
+            "courseNumber": "2223",
+            "courseTitle": "Elements of Statistics II",
+            "reasonForTaking": "I’ve always enjoyed math. I already completed Calculus I and II even though they weren’t required for my major, and I also took Statistics I. Now I’m taking Statistics II to fulfill a general education requirement while continuing with a subject I enjoy."
+        }
+    ],
+    "footerLinks": [
+        {
+            "label": "CLT Web",
+            "url": "https://webpages.charlotte.edu/bpokhar3/"
+        },
+        {
+            "label": "GitHub.io",
+            "url": "https://binitpoks-code.github.io/"
+        },
+        {
+            "label": "GitHub",
+            "url": "https://github.com/binitpoks-code"
+        },
+        {
+            "label": "freeCodeCamp",
+            "url": "https://www.freecodecamp.org/binitpoks-code"
+        },
+        {
+            "label": "Codecademy",
+            "url": "https://www.codecademy.com/profiles/BinitPokharel"
+        },
+        {
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/in/binit-pokharel-b342a7251"
+        },
+        {
+            "label": "ITIS3135.io",
+            "url": "https://binitpoks-code.github.io/itis3135/"
+        }
+    ]
+}

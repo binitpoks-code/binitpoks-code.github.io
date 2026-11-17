@@ -152,7 +152,7 @@ function buildForm() {
     bindForm();
 }
 
-function readData() {
+function readData(forExport = false) {
     const data = {};
     Object.keys(defaults)
         .filter((key) => !["img", "backgrounds", "courses", "footerLinks"].includes(key))
@@ -161,7 +161,7 @@ function readData() {
         });
     const dateParts = data.acknowledgmentDate.split("/");
     data.acknowledgmentDate = [dateParts[2], dateParts[0], dateParts[1]].join("-");
-    data.img = uploadedImage || defaults.img;
+    data.img = forExport ? defaults.img : uploadedImage || defaults.img;
     data.backgrounds = backgroundLabels.map((label, index) => ({
         label,
         value: form.elements.namedItem(`background-${index}`).value.trim()
@@ -181,12 +181,43 @@ function readData() {
     return data;
 }
 
-function render(data) {
+function exportData(data) {
+    // Match the submission assignment's linked example without changing form controls.
+    return {
+        ...data,
+        personalInfo: {
+            statement: data.personalInfo,
+            personalBackground: data.backgrounds[0].value,
+            professionalBackground: data.backgrounds[1].value,
+            academicBackground: data.backgrounds[2].value,
+            primaryWorkComputer: data.backgrounds[5].value,
+            primaryWorkLocation: data.backgrounds[6].value,
+            alternateComputerLocation: data.backgrounds[7].value
+        },
+        courses: data.courses.map((course) => ({
+            department: course.department,
+            courseNumber: course.number,
+            courseTitle: course.name,
+            reasonForTaking: course.reason
+        })),
+        footerLinks: data.footerLinks.map((link) => ({ label: link.name, url: link.href }))
+    };
+}
+
+function render(data, forExport = false) {
     const result = element("div");
     const name = [data.firstName, data.middleName, data.nickname ? `'${data.nickname}'` : "", data.lastName]
         .filter(Boolean)
         .join(" ");
-    result.append(element("h6", `${name} ${data.prettyNameDivider} ${data.adjectives} ${data.animal}`));
+    result.append(element(forExport ? "h2" : "h6", `${name} ${data.prettyNameDivider} ${data.adjectives} ${data.animal}`));
+    if (forExport) {
+        result.append(element("p", data.acknowledgment));
+        const date = element("time", data.acknowledgmentDate);
+        date.dateTime = data.acknowledgmentDate;
+        const acknowledgmentDate = element("p", "Acknowledgment date: ");
+        acknowledgmentDate.append(date);
+        result.append(acknowledgmentDate);
+    }
     const figure = element("figure");
     const image = element("img");
     image.src = data.img;
@@ -222,7 +253,7 @@ function render(data) {
         (link, index) =>
             link.name !== defaults.footerLinks[index].name || link.href !== defaults.footerLinks[index].href
     );
-    if (changedLinks.length) {
+    if (forExport || changedLinks.length) {
         const profileParagraph = element("p");
         data.footerLinks.forEach((link, index) => {
             if (index) profileParagraph.append(document.createTextNode(" | "));
@@ -271,20 +302,64 @@ function xmlNode(name, value, doc) {
     if (Array.isArray(value)) value.forEach((entry) => node.append(xmlNode("item", entry, doc)));
     else if (value && typeof value === "object")
         Object.entries(value).forEach(([key, entry]) => node.append(xmlNode(key, entry, doc)));
-    else node.textContent = value;
+    else {
+        // XML 1.0 excludes control characters and unpaired UTF-16 surrogates.
+        node.textContent = String(value).replace(
+            /[^\u0009\u000A\u000D\u0020-\uD7FF\uE000-\uFFFD\u{10000}-\u{10FFFF}]/gu,
+            "\uFFFD"
+        );
+    }
     return node;
 }
+
+function indentXml(node, doc, depth = 0) {
+    const children = [...node.children];
+    if (!children.length) return;
+    children.forEach((child) => {
+        indentXml(child, doc, depth + 1);
+        node.insertBefore(doc.createTextNode("\n" + "    ".repeat(depth + 1)), child);
+    });
+    node.append(doc.createTextNode("\n" + "    ".repeat(depth)));
+}
+
+function readableHtml(node, depth = 0) {
+    const indent = "    ".repeat(depth);
+    const blockTags = ["HTML", "HEAD", "BODY", "MAIN", "FIGURE", "UL", "OL", "LI", "BLOCKQUOTE"];
+    if (!node.children.length || !blockTags.includes(node.tagName)) return indent + node.outerHTML;
+    const shell = node.cloneNode(false).outerHTML;
+    const opening = shell.slice(0, shell.indexOf(">") + 1);
+    const closing = "</" + node.localName + ">";
+    const lines = [];
+    let inline = "";
+    [...node.childNodes].forEach((child) => {
+        if (child.nodeType === 1 && blockTags.includes(child.tagName)) {
+            if (inline) lines.push("    ".repeat(depth + 1) + inline);
+            inline = "";
+            lines.push(readableHtml(child, depth + 1));
+        } else if (child.nodeType === 1) {
+            if (inline) lines.push("    ".repeat(depth + 1) + inline);
+            inline = child.outerHTML;
+        } else {
+            const text = element("span", child.textContent);
+            inline += text.innerHTML;
+        }
+    });
+    if (inline) lines.push("    ".repeat(depth + 1) + inline);
+    return indent + opening + "\n" + lines.join("\n") + "\n" + indent + closing;
+}
+
 document.querySelectorAll("[data-format]").forEach((button) =>
     button.addEventListener("click", () => {
         if (!form.reportValidity()) return;
-        const data = readData();
+        const data = readData(true);
         let output;
-        if (button.dataset.format === "json") output = JSON.stringify(data, null, 4);
+        if (button.dataset.format === "json") output = JSON.stringify(exportData(data), null, 4);
         else if (button.dataset.format === "xml") {
             const doc = document.implementation.createDocument(null, "introduction");
-            Object.entries(data).forEach(([key, value]) =>
+            Object.entries(exportData(data)).forEach(([key, value]) =>
                 doc.documentElement.append(xmlNode(key, value, doc))
             );
+            indentXml(doc.documentElement, doc);
             output = '<?xml version="1.0" encoding="UTF-8"?>\n' + new XMLSerializer().serializeToString(doc);
         } else {
             const doc = document.implementation.createHTMLDocument(document.title);
@@ -293,13 +368,16 @@ document.querySelectorAll("[data-format]").forEach((button) =>
             charset.setAttribute("charset", "UTF-8");
             doc.head.prepend(charset);
             const main = doc.createElement("main");
-            main.append(element("h2", "Introduction Form"), ...render(data).childNodes);
+            main.append(element("h1", "Introduction"), ...render(data, true).childNodes);
             doc.body.append(main);
-            output = "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
+            output = "<!DOCTYPE html>\n" + readableHtml(doc.documentElement);
         }
         document.getElementById("generated-output").value = output;
         document.getElementById("output-status").textContent =
-            `${button.dataset.format.toUpperCase()} generated. Uploaded images use a temporary browser URL.`;
+            `${button.dataset.format.toUpperCase()} generated.` +
+            (uploadedImage
+                ? " The uploaded image is temporary and preview-only; this export uses the original image path. Host your image and update the exported path before publishing it."
+                : " The export uses the original image path.");
     })
 );
 window.addEventListener("pagehide", (event) => {
