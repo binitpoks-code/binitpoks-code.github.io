@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the Bold Panther concept, choose a collection, consider your fit and understand the conceptual ordering process without checkout.">
+    <title>Bold Panther Sportswear | How It Works</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <link rel="icon" type="image/svg+xml" href="images/bold-panther-favicon.svg">
+    <script src="scripts/site.js" defer></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- skip-link provides keyboard access to main. Component placeholders are replaced by their own shared landmarks. -->
+    <a class="skip-link" href="#main-content">Skip to Content</a>
+    <div data-include="components/header.html"></div>
+    <!-- main-content is the skip-link destination. Layout classes group editorial copy, product images and related sections. Eyebrow and small-copy set context; button and text-link distinguish navigation actions. Hero arrows use spans only to hide decorative glyphs from assistive technology. -->
+    <!-- Heading classes: process-title styles the ordering introduction heading. step-title styles each process step heading. page-title identifies the page heading for its responsive spacing. -->
+    <main id="main-content" tabindex="-1">
+        <h2 class="page-title">How It Works</h2>
+        
+<!-- This div groups introductory copy as one grid item without adding a redundant section landmark. -->
+<section class="process-intro" aria-labelledby="process-heading"><div><p class="eyebrow">From First Look to Favorite Fit</p><h3 class="process-title" id="process-heading">Start With What You Actually Wear</h3><p>Choose for your day, then for your fit. The collection is organized by the kind of piece you want, rather than by a particular sport or level of experience.</p><p>This is a browse-only brand concept. The steps below explain a future ordering journey; no account, cart, payment, reservation, or real order is created here.</p></div><figure><img src="images/charcoal-off-hours-cap.webp" alt="Charcoal Off Hours Cap with an adjustable strap and ivory BP monogram" width="720" height="900" decoding="async"><figcaption>A Small Detail That Goes a Long Way.</figcaption></figure></section>
+<ol class="steps"><li><h3 class="step-title">Choose a Collection</h3><p>Start with a jersey, a coordinated tracksuit, everyday essentials, or an accessory. <a href="collections.html">Explore the lineup</a> and filter to the pieces you want.</p></li><li><h3 class="step-title">Consider the Shape</h3><p>Read each product's fit description. Use the guide below to compare regular, relaxed, and oversized preferences.</p></li><li><h3 class="step-title">Check the Details</h3><p>Before a real purchase, compare finished measurements, material information, care guidance, and the full price. Those verified specifications would be part of a real launch.</p></li><li><h3 class="step-title">Know What Happens Next</h3><p>A future store would confirm availability, delivery, returns, and payment before accepting an order. This concept stops at browsing and fit guidance.</p></li></ol>
+<!-- fit-guide identifies the size guidance destination. fit-controls aligns labeled selects; fit-result announces the updated recommendation. -->
+<section class="fit-guide" id="fit-guide" aria-labelledby="fit-heading">
+    <h3 id="fit-heading">Find Your Kind of Fit</h3>
+    <p>Start with the shape you enjoy wearing. This guide explains our concept fits; it does not calculate a size from your body measurements.</p>
+    <noscript><p>Jerseys and tops have a straight regular cut. Tracksuit layers allow room over a tee, while shorts have an easy leg opening. Choose your usual label size as a starting point, then compare the actual garment measurements before ordering. Accessories use their own fit descriptions.</p></noscript>
+    <section class="fit-controls" aria-label="Fit Preferences" hidden>
+        <label for="garment-type">Garment Type
+            <select id="garment-type" name="garment-type">
+                <option value="tops">Jerseys &amp; Tops</option>
+                <option value="layers">Tracksuits &amp; Layers</option>
+                <option value="bottoms">Shorts &amp; Bottoms</option>
+                <option value="accessories">Accessories</option>
+            </select>
+        </label>
+        <label for="fit-preference">Preferred Fit
+            <select id="fit-preference" name="fit-preference">
+                <option value="regular">Regular</option>
+                <option value="relaxed">Relaxed</option>
+                <option value="oversized">Oversized</option>
+            </select>
+        </label>
+    </section>
+    <p id="fit-result" class="fit-result" role="status" aria-live="polite" aria-atomic="true">Concept apparel runs from XS to 4XL. A size label is only a starting point: compare a garment you already like with the product's measurements before committing to a fit.</p>
+    <p class="small-copy">No gender-specific sizing assumptions. Comfort, layering, and your own preferences come first. Final garment measurements would be provided before any real sale.</p>
+</section>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>
